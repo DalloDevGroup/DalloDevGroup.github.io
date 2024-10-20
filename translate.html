@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Comparison</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+<h1>JSON Comparison</h1>
+<table class="table table-bordered table-striped">
+    <thead class="thead-light">
+        <tr>
+          <th>No.</th>
+            <th>Key</th>
+            <th>English</th>
+            <th>Arabic</th>
+            <th>Copy</th>
+        </tr>
+    </thead>
+    <tbody id="jsonComparisonTable">
+    </tbody>
+    <tfoot>
+      Sidaas u ayaan u qoray wixi qaldan copy dheh ka dib isago saxan WhatsApp kan iigu soo dir
+      <a href="https://wa.me/252906105744" id="whatsappButton" class="whatsapp-button" onclick="shareOnWhatsApp()">+252 906 105 744</a>
+    </tfoot>
+</table>
+</div>
+<script>
+    // Complete JSON objects
+    const json1 = {
+  "@@locale": "en",
+  "language": "English",
+  "changeLanguage": "Language",
+  "@language": {
+    "description": "Selected Language"
+  },
+
+  "appBarHome": "SBO App",
+  "appBarUpload": "Upload Book",
+  "appBarProfile": "Profile",
+  "appBarNotification": "Notification",
+  "appBarManage": "Manage books",
+  "appBarPayBook": "Pay Book",
+  "appBarRequest": "Request Upload Book",
+  "appBarSupport": "Help Center",
+  "appBarManageUsers": "Manage Users",
+  "appBarRequestUsers": "Requests Users",
+  "appBarRequestUsersHis": "History",
+  "appBarCropImg" : "Crop Image",
+  "appBarAddCategory": "Add category",
+  "appBarUpdateNotify": "Update Notifications",
+  "appBarManageHeader": "Manage Headers",
+  "appBarWinWeek": "Win Weakly Gift",
+
+  "bodyVerifyEmail": "Verify Email",
+  "bodyVerifyNum": "Verify Number",
+
+  "bodyPaid": "Paid",
+  "bodyFree": "Free",
+  "bodySelectImage": "Select Image",
+  "bodySelectPDF": "Select PDF",
+  "bodyNoteBBooFeeText": "Note: Book fee is $",
+  "bodyNoteBookPublishText": "books will be published after you paid.",
+  "bodyPayFee": "Pay fee",
+  "bodyLblBookPrice": "Book Price",
+
+  "bodyAddCategory": "Add Category",
+  "bodyLblCategory": "Category",
+
+  "bodyAdd": "Add",
+  "bodyUpdate": "Update",
+  "bodySomali" : "Somali",
+  "bodyArabic" : "Arabic",
+  "bodyEnglish" : "English",
+  "bodySkip": "Skip",
+  "bodyGetStart": "Get Started",
+  "bodyComingSoon": "Coming soon...",
+  "bodyTranslated": "Translated by",
+  "bodySelectLang": "Select Language",
+  "bodyFavorite": "Favorite",
+  "bodySold": "Sold",
+
+
+  "bodyOk": "Ok",
+  "bodyNewBooAdded": "New Book Added",
+  "bodyReadNow": "Read Now",
+  "bodyDone": "Done",
+  "bodyAll": "All",
+  "bodyAddBook": "Add book",
+  "bodyBooks": "Books",
+  "bodyRequestUploadBook": "Request Upload Book",
+  "bodyUsers": "Users",
+  "bodyNotify": "Notifications",
+  "bodyUpdateBooFee": "Update book fee",
+  "bodyUpdatePrice": "Update Price",
+  "bodyPrice": "Price",
+  "bodyEnterNewPrice": "Enter new price",
+  "bodyAccountNum": "Account number",
+  "bodyCurrentAcc": "Current Acc",
+  "bodyUserRequest": "User requests",
+  "bodyFeedbackAndHelp": "Feedback and Help",
+  "bodyRateUs": "Rate App",
+  "bodySettings": "Settings",
+  "bodyShareApp": "Share App",
+  "bodySingOut": "Sing Out",
+  "bodyFavAnPaidBook": "My library",
+  "bodyFavBook": "Favorite books",
+  "bodyPaidBook": "Paid books",
+  "bodyManage" : "Manage books",
+  "bodyChangeTheme": "Change Theme",
+  "bodyVersion": "Version",
+
+
+
+  "bodyBookCoverPicture": "Book Cover Picture",
+  "bodyBookChangeImage": "Change image",
+  "bodyBookChangePDF": "Change PDF",
+  "bodyBookSelectBookPdf": "Select book Pdf",
+  "bodyBookSelectOneOfThem": "Select one of them",
+  "bodyBookFeeUserErrorCont": "if occurred mistake please contact us on number: ",
+  "bodyBookSave": "Save",
+
+  "bodyBooBooPrInfo": "Book Price Info",
+  "bodyBookName": "Name:",
+  "bodyBookID": "ID:",
+  "bodyBookPrice": "Price:",
+  "bodyBookStartProcess": "Start process",
+  "bodyBookCancel": "Cancel",
+  "bodyBookContactUs": "Contact Us on",
+  "bodyBookWhat": "WhatsApp",
+  "bodyBookSendUsYou": "Send us your tr. Id and you name",
+  "bodyBookNext": "Next",
+
+  "bodyUploadBWaitingText": "You have requested to upload books We are review your request with in 2 or 3days, so please wait...",
+  "bodyUploadBHello": "hello",
+  "bodyUploadBWelcomeSBO": "Welcome to SBO app",
+  "bodyUploadBRequestNow": "Request Now",
+  "bodyUploadBSendRequest": "Send Request",
+  "bodySelectAgentName": "Select agent name",
+  "bodyUploadBookRequest": "Upload book request",
+  "bodyClearNotifications": "Clear Notifications",
+
+  "bodyUserNB": "Do not change or erase!",
+  "bodyUserID": "UserID",
+  "bodySubmit": "Submit",
+
+  "bodyEdit": "Edit",
+  "bodyMyBook": "My books",
+  "bodyChangePsd": "Change Password",
+  "bodyCheckPsd": "Please Check your password",
+  "bodyCancel": "Cancel",
+  "bodySetPsd": "Set Password",
+  "bodyIncorrectPsd": "Incorrect Password",
+  "bodyContinue": "Continue",
+  "bodySetProfile": "Set Profile",
+
+  "bodyLblName": "Name",
+  "bodyLblEmail": "Email",
+  "bodyLblPhone": "Phone",
+  "bodyLblPsd": "Password",
+  "bodyLblOldPsd": "Old Password",
+  "bodyLblConfirmPsd": "Confirm Password",
+  "bodyLblBook": "Book Name",
+  "bodyLblBooAuthor": "Book Author",
+  "bodyBookLblCover": "Cover Link",
+  "bodyBooLblTelecomName": "Telecom Name",
+  "bodyUploadBLblRealName": "Real Name",
+  "bodyUploadBLblContactEmail": "Contact Email",
+  "bodyUploadBLblContactPhone": "Contact Phone",
+  "bodyLblSelectPro": "Select Problem Issue",
+  "bodyLblDescr": "Describe",
+  "bodyLblNewPsd": "New Password",
+  "bodyLblMsg": "Message",
+  "bodyLblImgLink": "Image Link",
+  "bodyLblLanguage": "Language",
+
+
+  "bodyActive": "Active",
+  "bodyRequests": "Requests",
+  "bodyRejects": "Rejects",
+
+  "bodyLblRedirectLink": "Redirect Link",
+  "bodyHintRedirectLink": "Enter Redirect Link",
+  "bodyEnterValidUrl": "Please Enter valid Url",
+  "bodyLblTitle": "Title",
+  "bodyHintTitle": "Enter a Title",
+  "bodySend": "Send",
+
+  "bodyHintName": "Enter your full Name",
+  "bodyHintEmail": "Enter your Email",
+  "bodyHintPhone": "Enter your Phone (Optional)",
+  "bodyHintPsd": "Enter your Password",
+  "bodyHintOldPsd": "Enter Old Password",
+  "bodyHintConfirmPsd": "Confirm your Password",
+  "bodyHintBook": "Enter Book Name",
+  "bodyHintBookAuthor": "Enter Book Author",
+  "bodyHintBookPrice": "Enter Book Price",
+  "bodyHintCategory": "Add Category",
+  "bodyBookHintCover": "Enter Cover Link",
+  "bodyBooHintTelecomName": "Choose you number's Telecom name",
+  "bodyUploadBHintRealName": "Enter Real Name",
+  "bodyUploadBHintContactEmail": "Enter Contact Email",
+  "bodyUploadBHintContactPhone": "Enter Contact Phone",
+  "bodyBookHintBook": "Enter Book Name",
+  "bodyHintDescr": "Describe your problem",
+  "bodyHintNewPsd": "Enter New Password",
+  "bodyHintTrans": "Enter Translated by author name",
+  "bodyHintMsg": "Enter Message",
+  "bodyHintImgLink": "Enter Image Link",
+
+  "bodyBookInfo": "Book Info",
+  "bodyBookAuthor": "Author",
+  "bodyBookTranslate": "Translate by",
+  "bodyBookPosted": "Posted",
+  "bodyBookLikes": "Like",
+
+  "bodyBookReport": "Book Report",
+  "bodyReport": "Report",
+
+
+  "bodyBookRates": "Rate",
+  "bodySeeMore": "See More",
+  "bodyTranslatedBy": "Translated by",
+  "bodyBookTitle": "Book title",
+  "bodyInfoBookAuthor": "Book Author",
+  "bodyBookRate": "Book Rate",
+  "bodyBookUploader": "Book Uploader",
+  "bodyWaiting": "Waiting...",
+  "bodyPayWithGooglePlay": "Pay with Google Play",
+  "bodyPayWithLocale": "Pay with locale payment",
+
+  "bodyPurchase": "Purchase",
+  "bodyMostPp": "Most Popular",
+
+  "bodyRemoveAd": "Remove Ad",
+  "bodyPay": "Pay",
+  "bodyMonth": "Month",
+  "bodyMonths": "Months",
+
+
+
+  "bodySingUp": "Sign Up",
+  "bodySingIn": "Sing In",
+  "bodyAgreeOur": "Agree our terms and privacy",
+  "bodyOurTerms": "terms and privacy",
+  "bodyPurchaseNote": "This app can be used without a subscription. With a subscription, you get unlimited access to all paid features and the ads will be removed. Payment will be charged to your Google Play account at the confirmation of purchase. Subscriptions automatically renew unless canceled at least 24 hours before the current period ends. Manage or cancel subscriptions in your Google Play account settings anytime.",
+  "bodyAlready": "Already i have an account",
+  "bodyRemember": "Remember",
+  "bodyForgetPsd": "Forget Password",
+  "bodyIDonT": "I don't have an account",
+  "bodyCreate": "Create new Account",
+  "bodyReset": "Reset",
+  "bodySendVerification": "Send Verification",
+  "bodyWaitResend" : "Please wait resend",
+  "bodyVContinue": "Continue",
+  "bodyRedirect": "if you not redirected after verification, click on the Continue button",
+  "otherUserSentVerification": "We have just sent email verification link on ",
+  "bodyUserNote": " please check email and click on that link to verify your email address ",
+  "bodyOr": "Or",
+  "bodyContWitG": "Continue with google",
+  "bodyWelcomeBack": "Welcome back!",
+  "bodyRefresh": "Refresh",
+  "bodyResend": "Resend",
+  "bodyRemove": "Remove",
+  "bodyUserNotFound": "User Not Found",
+  "bodyBookSubTitle": "Add book • Manage Books • Paid books",
+  "bodyUserSubTitle": "Role • Agents",
+  "bodyAgentTip": "To see Agent profile tap and hold cover",
+  "bodyAgent": "Agent",
+  "bodyNotifySubTitle": "Make Announcement • Make Alert",
+  "bodyWinWeek": "Win Weakly Gift",
+
+
+  "bodySignDelete": "Sign out and delete",
+  "bodyDoWentDelete": "Do you went to Delete this user account",
+  "bodyNewCaNewCategory": "New Category",
+  "bodyAddNotify": "Add Notify",
+  "bodyManageNotify": "Manage Notify",
+  "bodyAllUsers": "Users",
+  "bodyAllAuthors": "Authors",
+  "bodyAllAdmins": "Admins",
+  "bodyAllAgents": "Agents",
+  "bodyHeaderBanner": "Header Banner",
+
+  "bodyNotChangeAdmins": "You don't change admins role",
+
+  "bodySelectCategory": "Select category",
+  "bodyAddOrChooseCategory": "Add or Choose Category",
+
+  "bodyThemes": "Themes",
+
+  "bodyColorBlue": "blue",
+  "bodyColorGreen": "green",
+  "bodyColorPurple": "purple",
+  "bodyColorGrey": "grey",
+  "bodyColorBrown": "brown",
+  "bodyColorPink": "pink",
+
+  "bodyCheckYEmail": "Please check your email",
+  "bodyExist": "Enter an exist email",
+  "bodyEmptyEmail": "Empty! Please Enter you Email",
+  "bodyCheckName": "Please check your name",
+  "bodyCheckPhone": "Please check your phone",
+  "bodyPaIsTooShort": "Please check your name",
+  "bodyCheckCrmPsd": "Please check your confirm password",
+  "bodyYourPsdIsNotMatch": "Your password is not match!",
+  "bodyEnterValid": "Please enter a valid email",
+  "bodyErrorOccurred": "Error occurred",
+  "bodyMinPsdError": "Your password  is too short!",
+  "bodyNotFound": "Not found",
+  "bodyNoData": "No Data",
+  "bodyDeleteAccount": "Delete account",
+  "bodyDeleteNote": "Do you went to delete your account",
+  "bodyDeleteRem": "Remember if you delete your account you can not recovery or undo.",
+  "bodySendResetLink": "Send Reset Link",
+  "bodyResendPsdWait": "Please wait 5m to resend",
+  "bodyResult": "Result",
+  "bodyWinGift": "Win Gift",
+  "bodyEnableWkGift":"Enable Weekly Gift",
+  "bodyLuckyNumber": "Lucky number",
+  "bodyUpLuckyNum":"Update Lucky Number",
+  "bodyWinUser": "Win User",
+  "bodyLastLuckyNum":"Last lucky number:",
+  "bodyLastDateLucky": "Last date:",
+  "bodyWinThisGift":"Win this Gift",
+  "bodyShowGift":"Show Gift",
+  "bodyLuckyNum":"Lucky Number:",
+  "bodyCongregateGift":"Congregation \nYou win weekly gift and you got",
+  "bodyAlreadyDone": "you already done, Please wait next week",
+  "bodyLucky": "Lucky",
+  "bodyPreparingGift": "Preparing new gift...",
+  "bodySure": "sure",
+  "bodyPriChange": "Privilege Change",
+
+  "bodyLblSelectProblemIssue":  "Select Problem Issue",
+  "bodyLblDescribe":  "Describe",
+  "bodyHintDescribe": "Describe your problem",
+  "bodyLblReportDesc": "Report description",
+  "bodyHintReportDesc": "Tell us why you report this book",
+  "bodyReported": "Reported",
+  "bodyUserReportNote":  "Do not change or erase! \n\n",
+  "bodyWeSupportLanguages": "Supported Languages: Somali, Arabic and English-US",
+
+
+  "bodyShareAppLink": "Welcome to the SBO app! You can get the latest books, read more learn more. Check it out and install now",
+
+  "bodyUserManActions": "Do you want to remove ${user} from your agent.",
+  "@bodyUserManActions": {
+    "placeholders": {
+      "user": {
+        "type": "String",
+        "example": "Sultan"
+      }
+    }
+  },
+
+  "bodyWeekWinner" : "Winner of the week is {winUser} please try again next week",
+  "@bodyWeekWinner": {
+    "description": "A message when the user is win a week",
+    "placeholders": {
+      "winUser": {
+        "type": "String",
+        "example": "Suldanka"
+      }
+    }
+  },
+
+  "bodyRoleActions": "Do you went to promote {role} to {newRole} this user {user}",
+  "@bodyRoleActions": {
+    "description": "A message when the role change",
+    "placeholders": {
+      "role": {
+        "type": "String",
+        "example": "User"
+      },
+      "newRole": {
+        "type": "String",
+        "example": "User"
+      },
+      "user": {
+        "type": "String",
+        "example": "Sultan"
+      }
+    }
+  },
+  "bodyEmptyValid": "{currentField} can't be empty",
+  "@bodyEmptyValid": {
+    "description": "A message when the user leave empty field",
+    "placeholders": {
+      "currentField": {
+        "type": "String",
+        "example": "email"
+      }
+    }
+  },
+
+  "bodySorryGift": "You got {currentNumber} try again next weak",
+  "@bodySorryGift": {
+    "description": "A message when the user gets a certain number",
+    "placeholders": {
+      "currentNumber": {
+        "type": "String",
+        "example": "5"
+      }
+    }
+  },
+  "bodyAlreadyGot": "You already got {lucky} this week, please wait until next weak",
+  "@bodyAlreadyGot": {
+    "description": "A message when the user has already got a number",
+    "placeholders": {
+      "lucky": {
+        "type": "String",
+        "example": "7"
+      }
+    }
+  }
+
+};
+
+    const json2 = {
+       
+  "@@locale": "ar",
+  "language": "العربية",
+  "changeLanguage": "اللغة",
+  "@language": {
+    "description": "اللغة المختارة"
+  },
+
+  "appBarHome": "SBO App",
+  "appBarUpload": "تحميل كتاب",
+  "appBarProfile": "الملف الشخصي",
+  "appBarManage": "إدارة الكتب",
+  "appBarPayBook": "دفع الكتاب",
+  "appBarRequest": "طلب تحميل كتاب",
+  "appBarSupport": "مركز المساعدة",
+  "appBarManageUsers": "إدارة المستخدمين",
+  "appBarRequestUsers": "طلبات المستخدمين",
+  "appBarRequestUsersHis": "التاريخ",
+  "appBarCropImg": "قص الصوره",
+  "appBarNotification": "إعلانات",
+  "appBarAddCategory": "إضافة فئة",
+  "appBarUpdateNotify": "إشعارات التحديث",
+  "appBarManageHeader": "إدارة شعار الرأس",
+  "appBarWinWeek": "ربح هدية أسبوعية",
+
+
+  "bodySignUpNow": "سجّل وانضم إلينا",
+
+  "bodyVerifyEmail": "تحقق من البريد الإلكتروني",
+  "bodyVerifyNum": "تحقق من الرقم",
+  "bodyWaitResend": "يرجى الانتظار لإعادة الإرسال",
+  "bodyWeSupportLanguages": "اللغات المؤيدة: الصومالية والعربية والإنجليزية-الولايات المتحدة",
+
+  "bodyPaid": "مدفوع",
+  "bodyFree": "مجاني",
+  "bodySelectImage": "اختر صورة",
+  "bodyBookSelectBookPdf": "اختر كتاب Pdf",
+  "bodySelectPDF": "اختر PDF",
+  "bodyNoteBBooFeeText": "ملاحظة: رسوم الكتاب هي $",
+  "bodyNoteBookPublishText": "سيتم نشر الكتب بعد الدفع.",
+  "bodyPayFee": "دفع الرسوم",
+  "bodyAddCategory": "إضافة فئة",
+  "bodyAdd": "إضافة",
+  "bodyUpdate": "تحديث",
+  "bodySomali" : "صومالي",
+  "bodyArabic" : "عربي",
+  "bodyEnglish" : "إنجليزي",
+  "bodySkip": "يتخطى",
+  "bodyGetStart": "البدء",
+  "bodyComingSoon":  "قريباً...",
+  "bodyTranslated":  "تمت الترجمة بواسطة",
+  "bodySelectLang": "اختار اللغة",
+  "bodyFavorite": "مفضل",
+  "bodySold": "مُباع",
+
+  "bodyOk": "حسنًا",
+  "bodyNewBooAdded": "تمت إضافة كتاب جديد",
+  "bodyReadNow": "اقرأ الآن",
+  "bodyDone": "تم",
+  "bodyAll": "الكل",
+  "bodyAddBook": "أضف كتاب",
+  "bodyBooks": "كتب",
+  "bodyRequestUploadBook": "طلب تحميل كتاب",
+  "bodyUsers": "مستخدمين",
+  "bodyNotify": "إشعارات",
+  "bodyUpdateBooFee": "تحديث رسوم الكتاب",
+  "bodyUpdatePrice": "تحديث السعر",
+  "bodyPrice": "السعر",
+  "bodyEnterNewPrice": "أدخل السعر الجديد",
+  "bodyAccountNum": "رقم الحساب",
+  "bodyCurrentAcc": "الحساب الحالي",
+  "bodyUserRequest": "طلبات المستخدم",
+  "bodyFeedbackAndHelp": "التعليقات والمساعدة",
+  "bodyRateUs": "قيم التطبيق",
+  "bodySettings": "الإعدادات",
+  "bodyShareApp": "شارك التطبيق",
+  "bodySingOut": "تسجيل الخروج",
+  "bodyFavAnPaidBook": "مكتبتي",
+  "bodyFavBook": "الكتب المفضلة",
+  "bodyPaidBook": "الكتب المدفوعة",
+  "bodyManage": "إدارة الكتب",
+  "bodyChangeTheme": "غير الخلفية",
+  "bodyVersion": "الإصدار",
+
+  "bodyBookCoverPicture": "صورة غلاف الكتاب",
+  "bodyChangeImage": "تغيير الصورة",
+  "bodyChangePDF": "تغيير PDF",
+  "bodySelectBookPdf": "اختر PDF الكتاب",
+  "bodySelectOneOfThem": "اختر واحدًا منهم",
+  "bodyFeeUserErrorCont": "إذا حدث خطأ، يرجى الاتصال بنا على الرقم: ",
+  "bodySave": "حفظ",
+
+  "bodyBooPrInfo": "معلومات سعر الكتاب",
+  "bodyBookName": "الاسم:",
+  "bodyBookID": "المعرف:",
+  "bodyBookkPrice": "السعر:",
+  "bodyBookStartProcess": "بدء العملية",
+  "bodyBookCancel": "إلغاء",
+  "bodyBookContactUs": "اتصل بنا على",
+  "bodyBookWhat": "واتساب",
+  "bodyBookSendUsYou": "أرسل لنا معرف المعاملة واسمك",
+  "bodyBookNext": "التالي",
+
+  "bodyUploadBWaitingText": "لقد طلبت تحميل كتب نحن نراجع طلبك في غضون 2 أو 3 أيام، لذا يرجى الانتظار...",
+  "bodyUploadBHello": "مرحبا",
+  "bodyUploadBWelcomeSBO": "مرحبًا بكم في تطبيق SBO",
+  "bodyUploadBRequestNow": "اطلب الآن",
+  "bodyUploadBSendRequest": "إرسال الطلب",
+  "bodySelectAgentName": "إختار اسم الوكيل",
+  "bodyUploadBookRequest": "طلب تحميل  كتاب",
+  "bodyClearNotifications": "مسح الإخطارات",
+  "bodyAllUsers": "المستخدمون",
+  "bodyAllAuthors": "المؤلفون",
+  "bodyAllAdmins": "مدراء",
+  "bodyAllAgents": "وكلاء",
+  "bodyHeaderBanner": "لافتة رأسية",
+
+  "bodyBookChangeImage": "تغيير الصورة",
+  "bodyBookChangePDF": "تغيير PDF",
+  "bodyNewCaNewCategory": "فئة جديدة",
+
+  "bodyUserNB": "لا تغير أو تحذف!",
+  "bodyUserID": "معرف المستخدم",
+  "bodySubmit": "إرسال",
+
+  "bodyEdit": "تعديل",
+  "bodyName": "الاسم",
+  "bodyEmail": "البريد الإلكتروني",
+  "bodyPhone": "الهاتف",
+  "bodyMyBook": "كتابي",
+  "bodyChangePsd": "تغيير كلمة المرور",
+  "bodyCheckPsd": "يرجى التحقق من كلمة المرور الخاصة بك",
+  "bodyCancel": "إلغاء",
+  "bodySetPsd": "تعيين كلمة المرور",
+  "bodyIncorrectPsd": "كلمة المرور غير صحيحة",
+  "bodyContinue": "متابعة",
+  "bodySetProfile": "تعيين الملف الشخصي",
+
+
+  "bodyLblName": "الاسم",
+  "bodyLblEmail": "البريد الإلكتروني",
+  "bodyLblPhone": "الهاتف",
+  "bodyLblPsd": "كلمة المرور",
+  "bodyLblOldPsd": "كلمة المرور القديمة",
+  "bodyLblConfirmPsd": "تأكيد كلمة المرور",
+  "bodyLblBook": "اسم الكتاب",
+  "bodyLblBooAuthor": "مؤلف الكتاب",
+  "bodyLblBookPrice": "سعر الكتاب",
+  "bodyLblCategory": "الفئة",
+  "bodyLblCover": "رابط الغلاف",
+  "bodyBooLblTelecomName": "اسم شركة الاتصالات",
+  "bodyUploadBLblRealName": "الاسم الحقيقي",
+  "bodyUploadBLblContactEmail": "البريد الإلكتروني للتواصل",
+  "bodyUploadBLblContactPhone": "هاتف التواصل",
+  "bodyUsrLblSelectPro": "اختر مشكلة",
+  "bodyUsrLblDescr": "وصف",
+  "bodyLblNewPsd": "كلمة المرور الجديدة",
+  "bodyLblMsg": "رسالة",
+  "bodyLblImgLink": "رابط الصورة",
+  "bodyLblLanguage": "اللغة",
+
+  "bodyActive": "نشط",
+  "bodyRequests": "الطلبات",
+  "bodyRejects": "يرفض",
+
+  "bodyAgentTip": "لرؤية ملف تعريف الوكيل، انقر مع الاستمرار على الغطاء",
+  "bodyAgent": "وكيل",
+
+
+  "bodyLblRedirectLink": "رابط إعادة التوجيه",
+  "bodyHintRedirectLink": "أدخل رابط إعادة التوجيه",
+  "bodyEnterValidUrl": "الرجاء إدخال عنوان URL صالح",
+  "bodyLblTitle": "العنوان",
+  "bodyHintTitle": "أدخل عنوانًا",
+  "bodySend": "إرسال",
+
+  "bodyHintBook": "أدخل اسم الكتاب",
+  "bodyHintBookAuthor": "أدخل مؤلف الكتاب",
+  "bodyHintBookPrice": "أدخل سعر الكتاب",
+  "bodyHintCategory": "أضف فئة",
+  "bodyHintCover": "أدخل رابط الغلاف",
+  "bodyBooHintTelecomName": "اختر اسم شركة الاتصالات لرقمك",
+  "bodyUploadBHintRealName": "أدخل الاسم الحقيقي",
+  "bodyUploadBHintContactEmail": "أدخل البريد الإلكتروني للتواصل",
+  "bodyUploadBHintContactPhone": "أدخل هاتف التواصل",
+  "bodyBookHintBook": "أدخل اسم الكتاب",
+  "bodyUsrHintDescr": "صف مشكلتك",
+  "bodyHintOldPsd": "أدخل كلمة المرور القديمة",
+  "bodyHintNewPsd": "أدخل كلمة المرور الجديدة",
+  "bodyHintName": "أدخل اسمك الكامل",
+  "bodyHintEmail": "أدخل بريدك الإلكتروني",
+  "bodyHintPhone": "أدخل هاتفك (اختياري)",
+  "bodyHintPsd": "أدخل كلمة المرور",
+  "bodyHintConfirmPsd": "أكد كلمة المرور",
+  "bodyHintTrans": "أدخل مترجم حسب اسم المؤلف",
+  "bodyHintMsg": "أدخل رسالة",
+  "bodyHintImgLink": "أدخل رابط الصورة",
+
+  "bodySingUp": "التسجيل",
+  "bodySingIn": "تسجيل الدخول",
+  "bodyAgreeOur": "أوافق على الشروط والخصوصية",
+  "bodyOurTerms": "الشروط والخصوصية",
+  "bodyPurchaseNote": "يمكن استخدام هذا التطبيق بدون اشتراك. مع الاشتراك، ستحصل على وصول غير محدود إلى جميع الميزات المدفوعة وسيتم إزالة الإعلانات. سيتم خصم المبلغ من حسابك على Google Play عند تأكيد الشراء. يتم تجديد الاشتراكات تلقائيًا ما لم يتم إلغاؤها قبل 24 ساعة على الأقل من انتهاء الفترة الحالية. يمكنك إدارة أو إلغاء الاشتراكات في إعدادات حساب Google Play الخاص بك في أي وقت",
+  "bodyAlready": "لدي حساب بالفعل",
+  "bodyRemember": "تذكرني",
+  "bodyForgetPsd": "نسيت كلمة المرور",
+  "bodyIDonT": "ليس لدي حساب",
+  "bodyCreate": "إنشاء حساب جديد",
+  "bodyReset": "إعادة تعيين",
+  "bodySendVerification": "إرسال التحقق",
+  "bodyVContinue": "متابعة",
+  "bodyRedirect": "إذا لم يتم إعادة توجيهك بعد التحقق، انقر على زر المتابعة",
+  "otherUserSentVerification": "لقد أرسلنا للتو رابط التحقق من البريد الإلكتروني",
+  "bodyUserNote": " يرجى التحقق من البريد الإلكتروني والنقر على الرابط لتأكيد عنوان بريدك الإلكتروني",
+  "bodyOr": "أو",
+  "bodyContWitG": "متابعة مع Google",
+  "bodyWelcomeBack": "مرحبًا بعودتك!",
+  "bodyRefresh": "تحديث",
+  "bodyResend": "إعادة الإرسال",
+  "bodyRemove": "إزالة",
+  "bodyUserNotFound": "المستخدم غير موجود",
+  "bodyBookSubTitle": "إضافة كتاب • إدارة الكتب • الكتب المدفوعة",
+  "bodyUserSubTitle": "دور • وكلاء",
+  "bodyNotifySubTitle": "عمل إعلان • عمل تنبيه",
+  "bodyWinWeek": "ربح هدية أسبوعية",
+  "bodySignDelete": "تسجيل الخروج وحذف الحساب",
+  "bodyDoWentDelete": "هل ذهبت لحذف حساب المستخدم هذا",
+  "bodyAddNotify":"إضافة إشعار",
+  "bodyManageNotify": "إدارة الإخطار",
+
+  "bodyNotChangeAdmins": "لا يمكنك تغيير دور المشرف",
+
+  "bodySelectCategory": "اختر فئة",
+  "bodyAddOrChooseCategory": "أضف أو اختر فئة",
+
+  "bodyThemes": "خلفيات",
+
+  "bodyColorBlue": "أزرق",
+  "bodyColorGreen": "أخضر",
+  "bodyColorPurple": "أرجواني",
+  "bodyColorGrey": "رمادي",
+  "bodyColorBrown": "بني",
+  "bodyColorPink": "وردي",
+
+  "bodyCheckYEmail": "يرجى التحقق من بريدك الإلكتروني",
+  "bodyExist": "أدخل بريد إلكتروني موجود",
+  "bodyEmptyEmail": "فارغ! يرجى إدخال بريدك الإلكتروني",
+  "bodyCheckName": "يرجى التحقق من اسمك",
+  "bodyCheckPhone": "يرجى التحقق من هاتفك",
+  "bodyPaIsTooShort": "يرجى التحقق من اسمك",
+  "bodyCheckCrmPsd": "يرجى التحقق من تأكيد كلمة المرور",
+  "bodyYourPsdIsNotMatch": "كلمة المرور الخاصة بك لا تتطابق!",
+  "bodyEnterValid": "يرجى إدخال بريد إلكتروني صالح",
+  "bodyErrorOccurred": "حدث خطأ",
+
+  "bodyLblReportDesc": "وصف التقرير",
+  "bodyHintReportDesc": "أخبرنا عن سبب الإبلاغ عن هذا الكتاب",
+  "bodyReported": "تم الإبلاغ عنه",
+
+  "bodyMinPsdError": "كلمة المرور الخاصة بك قصيرة جدًا!",
+  "bodyNotFound": "غير معثور عليه",
+  "bodyNoData": "لايوجد بيانات",
+  "bodyDeleteAccount": "حذف الحساب",
+  "bodyDeleteNote": "هل تريد حذف حسابك",
+  "bodyDeleteRem": "تذكر أنه إذا قمت بحذف حسابك، فلن تتمكن من استرداده أو التراجع عنه.",
+  "bodySendResetLink": "أرسل رابط إعادة التعيين",
+  "bodyResendPsdWait": "الانتظار 5 دقائق لإعادة الإرسال",
+  "bodyResult": "النتيجة",
+  "bodyWinGift": "الفوز بالهدية",
+  "bodyEnableWkGift": "تمكين الهدية الأسبوعية",
+  "bodyLuckyNumber": "رقم الحظ",
+  "bodyUpLuckyNum":"تحديث رقم الحظ",
+  "bodyWinUser": "الفوز بالمستخدم",
+
+  "bodyLblSelectProblemIssue": "حدد مشكلة المشكلة",
+  "bodyLblDescribe":  "وصف",
+  "bodyHintDescribe": "وصف مشكلتك",
+  "bodyUserReportNote":  "لا تغير أو تمسح! \n\n",
+
+
+  "bodyLastLuckyNum":"رقم الحظ الأخير:",
+  "bodyWinThisGift":"اربح هذه الهدية",
+  "bodyShowGift":"عرض الهدية",
+  "bodyLuckyNum":"رقم الحظ:",
+  "bodyCongregateGift":"مبروك \nلقد فزت بالهدية الأسبوعية وحصلت عليها",
+  "bodyAlreadyDone": "لقد انتهيت بالفعل، يرجى الانتظار الأسبوع المقبل",
+  "bodyLucky": "محظوظ",
+  "bodyPreparingGift": "جارٍ تحضير هدية جديدة...",
+  "bodyLastDateLucky": "اخر موعد:",
+  "bodySure": "بالتأكيد",
+  "bodyPriChange": "تغيير الامتياز",
+
+  "bodyBookInfo": "معلومات الكتاب",
+  "bodyBookAuthor": "المؤلف",
+  "bodyBookTranslate": "ترجمة",
+  "bodyBookPosted": "تم النشر",
+
+  "bodyBookRates": "السعر",
+  "bodySeeMore": "شاهد المزيد",
+  "bodyTranslatedBy": "تمت الترجمة بواسطة",
+  "bodyBookTitle": "عنوان الكتاب",
+  "bodyInfoBookAuthor": "مؤلف الكتاب",
+  "bodyBookRate": "تقييم الكتاب",
+  "bodyBookUploader": "تحميل الكتب",
+  "bodyWaiting": "انتظار...",
+  "bodyPayWithGooglePlay": "الدفع باستخدام Google Play",
+  "bodyPayWithLocale": "الدفع باستخدام الدفع المحلي",
+  "bodyRemoveAd": "إزالة الإعلان",
+
+  "bodyPurchase": "شراء",
+  "bodyMostPp": "الأكثر شعبية",
+  "bodyPay": "يدفع",
+  "bodyMonth": "شهر",
+  "bodyMonths": "أشهر",
+
+  "bodyBookReport": "تقرير الكتاب",
+  "bodyReport": "تقرير",
+  "bodyBookLikes": "الإعجابات",
+  "bodyUserManActions": "هل تريد إزالة {user} بوكالتك.",
+  "@bodyUserManActions": {
+    "placeholders": {
+      "user": {
+        "type": "String",
+        "example": "سلطان"
+      }
+    }
+  },
+
+  "bodyWeekWinner" : "الفائز لهذا الأسبوع هو {winUser}، يرجى المحاولة مرة أخرى الأسبوع المقبل",
+  "@bodyWeekWinner": {
+    "description": "رسالة عندما يفوز المستخدم بأسبوع",
+    "placeholders": {
+      "winUser": {
+        "type": "String",
+        "example": "سلطان"
+      }
+    }
+  },
+
+  "bodyRoleActions": "هل ذهبت لترقية {role} إلى {newRole} هذا المستخدم {user}",
+  "@bodyRoleActions": {
+    "description": "رسالة عند تغيير الدور",
+    "placeholders": {
+      "role": {
+        "النوع": "String",
+        "مثال": "المستخدم"
+      },
+      "newRole": {
+        "type": "String",
+        "example": "المستخدم"
+      },
+      "user": {
+        "type": "String",
+        "example": "سلطان"
+      }
+    }
+  },
+
+  "bodyEmptyValid": "{currentField} لا يمكن أن يكون فارغًا",
+  "@bodyEmptyValid": {
+    "description": "رسالة عندما يترك المستخدم حقلًا فارغًا",
+    "placeholders": {
+      "currentField": {
+        "type": "String",
+        "example": "البريد الإلكتروني"
+      }
+    }
+  },
+
+  "bodySorryGift": "عذرًا، لقد حصلت على {currentNumber}، حاول مرة أخرى في الأسبوع المقبل",
+  "@bodySorryGift": {
+    "description": "رسالة عندما يحصل المستخدم على رقم معين",
+    "placeholders": {
+      "currentNumber": {
+        "type": "String",
+        "example": "5"
+      }
+    }
+  },
+  "bodyAlreadyGot": "لقد حصلت بالفعل على {lucky} هذا الأسبوع، يرجى الانتظار حتى يوم الجمعة المقبل",
+  "@bodyAlreadyGot": {
+    "description": "رسالة عندما يكون المستخدم قد حصل بالفعل على رقم",
+    "placeholders": {
+      "lucky": {
+        "type": "String",
+        "example": "7"
+      }
+    }
+  }
+
+};
+
+    // Function to compare JSON objects
+    function compareJSON(json1, json2) {
+        const tableBody = document.getElementById('jsonComparisonTable');
+        let rowCount = 1;
+        
+        // Recursive function to handle nested objects
+        // Recursive function to handle nested objects
+        function handleObject(key, obj1, obj2) {
+            for (const subKey in obj1) {
+                const fullKey = `${key}.${subKey}`;
+                if (typeof obj1[subKey] === 'object' && obj1[subKey] !== null) {
+                    handleObject(fullKey, obj1[subKey], obj2[subKey] || {});
+                } else {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${rowCount++}</td>  <!-- Increment row count -->
+                        <td style="max-width: 150px; word-wrap: break-word;">${fullKey}</td>
+                        <td text-wrap text-break>${obj1[subKey]}</td>
+                        <td text-wrap text-break>${obj2[subKey] !== undefined ? obj2[subKey] : 'N/A'}</td>
+                        <td><button class="btn btn-primary btn-sm" onclick="copyToClipboard('${key}', '${json2[key] || 'N/A'}')">Copy</button></td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            }
+        }
+
+        for (const key in json1) {
+            if (typeof json1[key] === 'object' && json1[key] !== null) {
+                handleObject(key, json1[key], json2[key] || {});
+            } else {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${rowCount++}</td>  <!-- Increment row count -->
+                    <td style="max-width: 150px; word-wrap: break-word;">${key}</td>
+                    <td text-wrap text-break>${json1[key]}</td>
+                    <td text-wrap text-break>${json2[key] !== undefined ? json2[key] : 'N/A'}</td>
+                    <td><button class="btn btn-primary btn-sm" onclick="copyToClipboard('${key}', '${json2[key] || 'N/A'}')">Copy</button></td>
+                `;
+                tableBody.appendChild(row);
+            }
+        }
+    }
+
+    
+// Function to copy text to clipboard
+function copyToClipboard(key, value) {
+    const textToCopy = `"${key}": "${value}"`;
+
+    // Create a hidden textarea to hold the text to copy
+    const textArea = document.createElement('textarea');
+    textArea.value = textToCopy;
+
+    // Prevent scrolling to the bottom
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-9999px';
+    document.body.appendChild(textArea);
+
+    // Select the text and copy it
+    textArea.focus();
+    textArea.select();
+
+    try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+            alert(`Copied to clipboard: ${textToCopy}`);
+        } else {
+            alert('Unable to copy. Please try manually.');
+        }
+    } catch (err) {
+        console.error('Fallback: Unable to copy', err);
+    }
+
+    // Remove the textarea after copying
+    document.body.removeChild(textArea);
+  }
+
+// Call the function to display the comparison
+    compareJSON(json1, json2);
+</script>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
